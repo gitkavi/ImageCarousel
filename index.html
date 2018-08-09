@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="./css/style.css" rel="stylesheet" type="text/css">
+    <title>Fortitude</title>
+</head>
+<body>
+    <h2>Image Carousel</h2> 
+    <div class="img-div">
+        <div class="slide img-fade">
+            <img src ="./images/sprout.jpg" alt="Sprout">
+            <div class="caption">Caption 1</div>
+        </div>
+        <div class="slide img-fade">
+            <img  src="./images/pexels.jpg" alt="Mountain">
+            <div class="caption">Caption 2</div>
+        </div>
+        <div class="slide img-fade">
+            <img src="./images/nature-design.jpg" alt="Nature">
+            <div class="caption">Caption 3</div>
+        </div>
+        <div class="slide img-fade">
+            <img src="./images/beauty-of-nature.jpg" alt="Beauty of Nature">
+            <div class="caption">Caption 4</div>
+        </div>  
+        <div class="slide img-fade">
+            <img src="./images/avenue.jpg" alt="Avenue">
+            <div class="caption">Caption 5</div>
+        </div>   
+        <a class="prev" onclick="prevSlide(-1)">&#10094;</a>
+        <a class="next" onclick="prevSlide(1)">&#10095;</a>
+    </div>
+</body>
+<script>
+    var index = 1;
+    // start with first image of index 0
+    showSlide(index);
+
+    function prevSlide(x){
+        showSlide(index = index + x);
+    }
+
+    function showSlide(a){
+        // get all the images
+        var slides = document.getElementsByClassName("slide");
+        // If the index is greater than the length then reset to 1
+        if (a > slides.length) {index = 1}    
+        if (a < 1) {index = slides.length}
+        for(var i = 0; i<slides.length; i++){
+            slides[i].style.display = "none";
+        }
+        // Shows the image of index-1
+        slides[index-1].style.display="block";
+    }
+</script>
+</html>

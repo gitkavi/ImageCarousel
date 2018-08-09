@@ -1,0 +1,59 @@
+h2{
+    font-family: fantasy;
+    text-align: center;
+    font-size: 30px;
+}
+.img-div{
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+    text-align: center;
+}
+
+.slide{
+    display:none;
+}
+/* Media query for the responsiveness */
+@media screen and (min-width:300px){
+    img{
+        vertical-align: middle;
+        width:100%;
+        height:500px;
+    }
+    .img-fade{
+        animation-name: img-fade;
+        animation-duration: 1.5s;
+    }
+    @keyframes img-fade {
+        from{opacity: 0.4;}
+        to{opacity: 1;}   
+    }
+    .prev{
+        top:45%;
+        left:2%;
+        position:absolute;
+        width: auto;
+        padding: 16px;
+        color: white;
+        font-weight: bold;
+        font-size: 20px;
+    }
+    .next{
+        top:45%;
+        right:2%;
+        position: absolute;
+        color:white;
+        font-weight: bold;
+        font-size: 20px;
+        padding: 16px;
+        width: auto;
+    }
+    .caption{
+        position: absolute;
+        top:90%;
+        left:45%;
+        color:white;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 15px;
+    }
+}
